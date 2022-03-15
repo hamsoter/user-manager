@@ -1,0 +1,29 @@
+#modal {
+  background-color: ghostwhite;
+  width: 60%;
+  min-width: 300px;
+  max-width: 600px;
+  height: 200px;
+  overflow-y: auto;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1011;
+
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+}
+
+.type {
+  background-color: orangered;
+  padding: 0.5rem 1rem;
+  color: white;
+}
+
+.message {
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+}

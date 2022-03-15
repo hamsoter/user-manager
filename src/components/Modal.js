@@ -1,14 +1,15 @@
 import React from "react";
 import Card from "./UI/Card";
+import styles from "./Modal.module.css";
 
 const Modal = (props) => {
   // 기대하는 값
 
   return (
-    <Card>
-      <h2>{props.errorData.type}</h2>
-      <p>{props.errorData.message}</p>
-    </Card>
+    <div id={styles.modal}>
+      <h2 className={styles.type}>{props.errorData.type}</h2>
+      <p className={styles.message}>{props.errorData.message}</p>
+    </div>
   );
 };
 
