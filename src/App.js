@@ -50,7 +50,7 @@ function App() {
       {!invalid && (
         <BodyBlackoutStyle onInvalid={setInvalid}></BodyBlackoutStyle>
       )}
-      {!invalid && <Modal errorData={error} />}
+      {!invalid && <Modal errorData={error} onInvalid={setInvalid} />}
     </div>
   );
 }

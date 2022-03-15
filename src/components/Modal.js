@@ -1,5 +1,4 @@
 import React from "react";
-import Card from "./UI/Card";
 import styles from "./Modal.module.css";
 
 const Modal = (props) => {
@@ -9,6 +8,14 @@ const Modal = (props) => {
     <div id={styles.modal}>
       <h2 className={styles.type}>{props.errorData.type}</h2>
       <p className={styles.message}>{props.errorData.message}</p>
+      <button
+        className={styles.button}
+        onClick={() => {
+          props.onInvalid(true);
+        }}
+      >
+        알갯슴...
+      </button>
     </div>
   );
 };
