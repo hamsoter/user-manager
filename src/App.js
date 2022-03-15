@@ -24,6 +24,9 @@ function App() {
 
   const [users, setUsers] = useState(userArr);
 
+  // 서브밋 유효성
+  const [invalid, setInvalid] = useState(true);
+
   // 유저 추가
   const addUserHandler = (user) => {
     setUsers((prevUsers) => {
@@ -33,7 +36,7 @@ function App() {
 
   return (
     <div>
-      <UserInput onAddUser={addUserHandler}></UserInput>
+      <UserInput onAddUser={addUserHandler} onInvalid={setInvalid}></UserInput>
       <hr></hr>
       <UserList items={users}></UserList>
     </div>
