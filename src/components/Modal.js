@@ -2,12 +2,12 @@ import React from "react";
 import Card from "./UI/Card";
 
 const Modal = (props) => {
-  const errorName = "에러이름";
-  const message = "message";
+  // 기대하는 값
+
   return (
     <Card>
-      <h2>{errorName}</h2>
-      <p>{message}</p>
+      <h2>{props.errorData.type}</h2>
+      <p>{props.errorData.message}</p>
     </Card>
   );
 };

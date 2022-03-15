@@ -28,6 +28,9 @@ function App() {
   // 서브밋 유효성
   const [invalid, setInvalid] = useState(true);
 
+  // 서브밋 에러명
+  const [error, setError] = useState("");
+
   // 유저 추가
   const addUserHandler = (user) => {
     setUsers((prevUsers) => {
@@ -37,10 +40,14 @@ function App() {
 
   return (
     <div>
-      <UserInput onAddUser={addUserHandler} onInvalid={setInvalid}></UserInput>
+      <UserInput
+        onAddUser={addUserHandler}
+        onInvalid={setInvalid}
+        onError={setError}
+      ></UserInput>
       <hr></hr>
       <UserList items={users}></UserList>
-      <Modal></Modal>
+      {!invalid && <Modal errorData={error} />}
     </div>
   );
 }
