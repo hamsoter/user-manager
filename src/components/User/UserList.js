@@ -6,12 +6,9 @@ const UserList = (props) => {
   return (
     <Card>
       <ul>
-        <User></User>
-        <User></User>
-        <User></User>
-        <User></User>
-        <User></User>
-        <User></User>
+        {props.items.map((user) => {
+          return <User key={user.id} name={user.name} age={user.age}></User>;
+        })}
       </ul>
     </Card>
   );

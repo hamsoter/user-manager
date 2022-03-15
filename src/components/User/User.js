@@ -3,8 +3,8 @@ import React from "react";
 const User = (props) => {
   return (
     <li>
-      <span>유저명</span>
-      <span>(12세)</span>
+      <span>{props.name}</span>
+      <span>({props.age}세)</span>
     </li>
   );
 };
