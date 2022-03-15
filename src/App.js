@@ -24,9 +24,16 @@ function App() {
 
   const [users, setUsers] = useState(userArr);
 
+  // 유저 추가
+  const addUserHandler = (user) => {
+    setUsers((prevUsers) => {
+      return [user, ...prevUsers];
+    });
+  };
+
   return (
     <div>
-      <UserInput></UserInput>
+      <UserInput onAddUser={addUserHandler}></UserInput>
       <hr></hr>
       <UserList items={users}></UserList>
     </div>
