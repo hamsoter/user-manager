@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "../UI/Button";
 import Card from "../UI/Card";
 import styles from "./UserInput.module.css";
 
@@ -72,9 +73,9 @@ const UserInput = (props) => {
           step="1"
           className={styles["input"]}
         ></input>
-        <button type="submit" id={styles.addBtn}>
+        <Button type="submit" className="add">
           Add User
-        </button>
+        </Button>
       </form>
     </Card>
   );

@@ -1,0 +1,21 @@
+.button {
+  width: 8rem;
+  margin: 1rem;
+  margin-left: auto;
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  outline: 0;
+  background-color: orangered;
+  color: white;
+  border-radius: 0.2rem;
+}
+
+.button:hover {
+  background-color: rgb(236, 63, 0);
+}
+
+.button.add {
+  margin-left: 0;
+}

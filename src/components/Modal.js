@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Modal.module.css";
+import Button from "./UI/Button";
 
 const Modal = (props) => {
   // 기대하는 값
@@ -8,14 +9,14 @@ const Modal = (props) => {
     <div id={styles.modal}>
       <h2 className={styles.type}>{props.errorData.type}</h2>
       <p className={styles.message}>{props.errorData.message}</p>
-      <button
+      <Button
         className={styles.button}
         onClick={() => {
           props.onInvalid(true);
         }}
       >
         알갯슴...
-      </button>
+      </Button>
     </div>
   );
 };
