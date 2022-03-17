@@ -1,29 +1,35 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Button from "../UI/Button";
 import Card from "../UI/Card";
 import styles from "./UserInput.module.css";
 
 const UserInput = (props) => {
-  const [enteredName, setEnteredName] = useState("");
-  const [enteredAge, setEnteredAge] = useState("");
+  const nameInputRef = useRef();
+  const ageInputRef = useRef();
 
-  const nameChangeHandler = (e) => {
-    setEnteredName(e.target.value);
-    props.onInvalid(true);
-  };
+  // const [enteredName, setEnteredName] = useState("");
+  // const [enteredAge, setEnteredAge] = useState("");
 
-  const ageChangeHandler = (e) => {
-    setEnteredAge(e.target.value);
-    props.onInvalid(true);
-  };
+  // const nameChangeHandler = (e) => {
+  //   setEnteredName(e.target.value);
+  //   props.onInvalid(true);
+  // };
+
+  // const ageChangeHandler = (e) => {
+  //   setEnteredAge(e.target.value);
+  //   props.onInvalid(true);
+  // };
 
   const submitHandler = (e) => {
     e.preventDefault();
 
+    const enteredUserName = nameInputRef.current.value;
+    const enteredUserAge = ageInputRef.current.value;
+
     const newData = {
       id: Math.random().toString(),
-      name: enteredName,
-      age: enteredAge,
+      name: enteredUserName,
+      age: enteredUserAge,
     };
 
     // 유효성필터1:  input이 비어있을 때
@@ -51,8 +57,7 @@ const UserInput = (props) => {
     props.onAddUser(newData);
     props.onError("");
 
-    setEnteredAge("");
-    setEnteredName("");
+    nameInputRef.current.value = ageInputRef.current.value = "";
   };
 
   return (
@@ -61,17 +66,19 @@ const UserInput = (props) => {
         <p className={styles.label}>Username</p>
         <input
           type="text"
-          onChange={nameChangeHandler}
-          value={enteredName}
+          // onChange={nameChangeHandler}
+          // value={enteredName}
+          ref={nameInputRef}
         ></input>
 
         <p className={styles.label}>Age (Years)</p>
         <input
           type="number"
-          onChange={ageChangeHandler}
-          value={enteredAge}
+          // onChange={ageChangeHandler}
+          // value={enteredAge}
           step="1"
           className={styles["input"]}
+          ref={ageInputRef}
         ></input>
         <Button type="submit" className="add">
           Add User
