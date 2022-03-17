@@ -1,10 +1,10 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import styles from "./Modal.module.css";
 import Button from "./Button";
+import BodyBlackoutStyle from "./BodyBlackoutStyle";
 
-const Modal = (props) => {
-  // 기대하는 값
-
+const ModalOverlay = (props) => {
   return (
     <div id={styles.modal}>
       <h2 className={styles.type}>{props.errorData.type}</h2>
@@ -18,6 +18,28 @@ const Modal = (props) => {
         알갯슴...
       </Button>
     </div>
+  );
+};
+
+// 포탈 연결
+const Modal = (props) => {
+  return (
+    <React.Fragment>
+      {/* <BodyBlackoutStyle onClick={props.onInvalid} /> */}
+
+      {ReactDOM.createPortal(
+        <BodyBlackoutStyle onClick={props.onInvalid} />,
+        document.getElementById("backdrop-root")
+      )}
+
+      {ReactDOM.createPortal(
+        <ModalOverlay
+          errorData={props.errorData}
+          onInvalid={props.onInvalid}
+        />,
+        document.getElementById("overlay-root")
+      )}
+    </React.Fragment>
   );
 };
 

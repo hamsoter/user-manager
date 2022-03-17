@@ -1,10 +1,8 @@
 import { Fragment, useState } from "react";
 import "./App.css";
 import Modal from "./components/UI/Modal";
-import BodyBlackoutStyle from "./components/UI/BodyBlackoutStyle";
 import UserInput from "./components/User/UserInput";
 import UserList from "./components/User/UserList";
-import Wrapper from "./components/Helpers/Wrapper";
 
 function App() {
   const userArr = [
@@ -48,9 +46,6 @@ function App() {
         onError={setError}
       />
       <UserList items={users}></UserList>
-      {!invalid && (
-        <BodyBlackoutStyle onInvalid={setInvalid}></BodyBlackoutStyle>
-      )}
       {!invalid && <Modal errorData={error} onInvalid={setInvalid} />}
     </Fragment>
   );

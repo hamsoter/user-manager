@@ -4,7 +4,7 @@ const BodyBlackoutStyle = (props) => {
   return (
     <div
       className={styles["body-blackout-style"]}
-      onClick={() => props.onInvalid(true)}
+      onClick={props.onClick}
     ></div>
   );
 };
