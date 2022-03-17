@@ -27,7 +27,7 @@ const UserInput = (props) => {
     };
 
     // 유효성필터1:  input이 비어있을 때
-    if (newData.name === "" || newData.age === "") {
+    if (newData.name.trim().length === 0 || newData.age.trim().length === 0) {
       // console.log("이름과 나이를 입력해주세요.");
       props.onInvalid(false);
       props.onError({
@@ -38,7 +38,7 @@ const UserInput = (props) => {
     }
 
     // 유효성필터2: age < 0
-    if (newData.age < 0) {
+    if (+newData.age < 1) {
       // console.log("나이는 음수일 수 없습니다.");
       props.onInvalid(false);
       props.onError({

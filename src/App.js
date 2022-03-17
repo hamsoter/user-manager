@@ -45,7 +45,7 @@ function App() {
         onAddUser={addUserHandler}
         onInvalid={setInvalid}
         onError={setError}
-      ></UserInput>
+      />
       <UserList items={users}></UserList>
       {!invalid && (
         <BodyBlackoutStyle onInvalid={setInvalid}></BodyBlackoutStyle>
