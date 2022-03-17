@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import "./App.css";
 import Modal from "./components/UI/Modal";
 import BodyBlackoutStyle from "./components/UI/BodyBlackoutStyle";
@@ -41,7 +41,7 @@ function App() {
   };
 
   return (
-    <Wrapper>
+    <Fragment>
       <UserInput
         onAddUser={addUserHandler}
         onInvalid={setInvalid}
@@ -52,7 +52,7 @@ function App() {
         <BodyBlackoutStyle onInvalid={setInvalid}></BodyBlackoutStyle>
       )}
       {!invalid && <Modal errorData={error} onInvalid={setInvalid} />}
-    </Wrapper>
+    </Fragment>
   );
 }
 
