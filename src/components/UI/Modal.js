@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Modal.module.css";
-import Button from "./UI/Button";
+import Button from "./Button";
 
 const Modal = (props) => {
   // 기대하는 값

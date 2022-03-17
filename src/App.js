@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import Modal from "./components/Modal";
+import Modal from "./components/UI/Modal";
 import BodyBlackoutStyle from "./components/UI/BodyBlackoutStyle";
 import UserInput from "./components/User/UserInput";
 import UserList from "./components/User/UserList";
